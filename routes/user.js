@@ -6,12 +6,12 @@ const {
   userProfile,
 } = require("../controllers/userController");
 
-// const validateToken = require("../middleware/validateJwtToken");
+const validateToken = require("../middleware/validateJwtToken");
 
 router.post("/register", userRegister);
 
 router.post("/login", userLogin);
 
-router.get("/profile", userProfile);
+router.get("/profile", validateToken, userProfile);
 
 module.exports = router;
