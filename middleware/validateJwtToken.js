@@ -1,11 +1,4 @@
 const jwt = require("jsonwebtoken");
-import cors from "cors";
-app.use(
-  cors({
-    origin: "https://your-frontend.vercel.app",
-    credentials: true,
-  })
-);
 
 const validateToken = async (req, res, next) => {
   try {
