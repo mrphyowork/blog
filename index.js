@@ -15,14 +15,14 @@ app.use(
 );
 app.use(express.json());
 
+const connectDB = require("./config/dbConnection");
+connectDB();
+
 const blog = require("./routes/blog");
 app.use("/blog", blog);
 
 const user = require("./routes/user");
 app.use("/user", user);
-
-const connectDB = require("./config/dbConnection");
-connectDB();
 
 app.get("/", (req, res) => {
   res.send("Hello World!!");
