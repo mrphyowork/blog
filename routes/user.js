@@ -12,6 +12,6 @@ router.post("/register", userRegister);
 
 router.post("/login", userLogin);
 
-router.get("/profile", validateToken, userProfile);
+router.get("/profile", userProfile);
 
 module.exports = router;
