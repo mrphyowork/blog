@@ -19,7 +19,7 @@ const connectDB = require("./config/dbConnection");
 connectDB();
 
 const blog = require("./routes/blog");
-// app.use("/blog", blog);
+app.use("/blog", blog);
 
 const user = require("./routes/user");
 app.use("/user", user);
