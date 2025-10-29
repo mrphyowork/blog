@@ -48,18 +48,18 @@ const userLogin = async (req, res) => {
 
     const user = await User.findOne({ email });
     if (user && bcrypt.compareSync(password, user.password)) {
-      const accessToken = jwt.sign(
-        {
-          user: {
-            username: user.username,
-            email: user.email,
-            id: user.id,
-          },
-        },
-        process.env.JWT_SECRET,
-        { expiresIn: "1m" }
-      );
-      return res.status(200).json({ accessToken, user });
+      // const accessToken = jwt.sign(
+      //   {
+      //     user: {
+      //       username: user.username,
+      //       email: user.email,
+      //       id: user.id,
+      //     },
+      //   },
+      //   process.env.JWT_SECRET,
+      //   { expiresIn: "1m" }
+      // );
+      return res.status(200).json(user);
     } else {
       return res
         .status(404)
