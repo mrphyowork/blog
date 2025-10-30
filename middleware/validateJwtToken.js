@@ -11,7 +11,7 @@ const validateToken = async (req, res, next) => {
           return res.status(401).json({ message: "User is not authorized!" });
         }
         req.user = decoded.user;
-        return res.status(200).json(token);
+
         next();
       });
     } else {
