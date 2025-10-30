@@ -57,7 +57,7 @@ const userLogin = async (req, res) => {
           },
         },
         process.env.JWT_SECRET,
-        { expiresIn: "1m" }
+        { expiresIn: "1h" }
       );
       return res.status(200).json({ accessToken });
     } else {
