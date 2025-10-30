@@ -8,7 +8,7 @@ var cors = require("cors");
 // app.use(cors());
 app.use(
   cors({
-    origin: ["https://blog-olive-three-64.vercel.app"],
+    origin: ["https://blog-react-xi-one.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
