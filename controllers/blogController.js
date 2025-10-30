@@ -1,8 +1,8 @@
 const Blog = require("../models/blogModel");
 
 const blogList = async (req, res) => {
-  // const blogs = await Blog.find({ user_id: req.user.id });
-  const blogs = await Blog.find();
+  const blogs = await Blog.find({ user_id: req.user.id });
+  // const blogs = await Blog.find();
   res.status(200).json(blogs);
 };
 
