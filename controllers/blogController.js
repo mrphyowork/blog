@@ -58,7 +58,7 @@ const blogDelete = async (req, res) => {
     if (blog.user_id.toString() !== req.user.id) {
       return res.status(403).json({ message: "Permission not allowed!" });
     }
-    await Blog.deleteOne();
+    await blog.deleteOne();
     return res.status(200).json(blog);
   } catch (err) {
     return res.status(500).json({ message: err.message });
