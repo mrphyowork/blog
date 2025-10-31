@@ -11,7 +11,7 @@ app.use(
     origin: ["https://blog-react-xi-one.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
+    // credentials: true,
   })
 );
 app.use(express.json());
