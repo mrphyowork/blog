@@ -97,7 +97,7 @@ const forgotPassword = async (req, res) => {
     await user.save();
 
     // Send email
-    const resetLink = `${process.env.BASE_URL}/auth/reset-password/${resetToken}`;
+    const resetLink = `${process.env.BASE_URL}/user/reset-password/${resetToken}`;
     const html = `
       <h3>Password Reset Request</h3>
       <p>Click the link below to reset your password:</p>
