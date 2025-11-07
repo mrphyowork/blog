@@ -116,7 +116,7 @@ const forgotPassword = async (req, res) => {
 // Reset Password
 const resetPassword = async (req, res) => {
   try {
-    const { token, email } = req.params;
+    const { token } = req.params;
     const { password } = req.body;
     // Validate that newPassword is provided
     if (!password) {
@@ -134,7 +134,7 @@ const resetPassword = async (req, res) => {
     // Hash the new password
     const hashedPassword = await bcrypt.hashSync(
       password,
-      bcrypt.genSaltSync(20)
+      bcrypt.genSaltSync(10)
     );
 
     // Update user with new password and clear reset token fields
